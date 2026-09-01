@@ -61,6 +61,7 @@ Full page contents for AI crawlers: https://www.hammertime.com/llms-full.txt
 - [Hammer + DealerTrack](https://www.hammertime.com/guides/dealertrack): Yes. Appointments write into DealerTrack and CDK. No CRM switch
 - [Hammer + Tekion](https://www.hammertime.com/guides/tekion-crm): Yes. Appointments write into Tekion. No CRM switch. Live in under 48 hours
 - [Hammer + Reynolds](https://www.hammertime.com/guides/reynolds): Yes. Appointments write into Reynolds. No CRM switch. Live in under 48 hours
+- [What CarChat is](https://www.hammertime.com/guides/what-is-carchat): CarChat (carchat.io) is Hammer's live dealer inventory marketplace. Not CarChat24 chat software, and not the Brazilian WhatsApp product at carchat.com.br
 - [Support](https://www.hammertime.com/support): support contact information
 - [Terms](https://www.hammertime.com/terms)
 - [Privacy](https://www.hammertime.com/privacy)

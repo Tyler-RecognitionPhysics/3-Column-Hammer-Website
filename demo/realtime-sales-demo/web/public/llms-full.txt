@@ -152,6 +152,16 @@ A 9pm Marketplace message still gets a text in under 5 seconds. Hammer answers n
 
 ---
 
+## Guide: What CarChat is (https://www.hammertime.com/guides/what-is-carchat)
+
+CarChat (carchat.io) is a live dealership inventory marketplace from Hammer Corp, not dealer live-chat software. Shoppers and AI assistants search cars that are actually on a lot right now, then contact the selling dealer. Listings come from each dealership's own website and refresh daily. Buyers do not pay and do not need an account. As of September 2026 the marketplace tracks more than 200,000 vehicles from about 2,000 dealerships.
+
+CarChat is not CarChat24 (carchat24.com), which sells live-chat widgets for dealer websites. It is not the Brazilian WhatsApp receptionist at carchat.com.br. Official site: https://carchat.io. Facts page: https://carchat.io/about.
+
+Hammer is the dealer-facing product: lead response, follow-up, and ChatGPT advertising sold as CarGPT (cargpt.pro). CarChat is the consumer lot. Inventory is open with no API key at https://carchat.io/llms.txt, https://carchat.io/api/v1/inventory, and https://carchat.io/mcp.
+
+---
+
 ## Guide: AI BDC (https://www.hammertime.com/guides/ai-bdc)
 
 An AI BDC is the first-reply and follow-up layer a business development center used to do by hand. Hammer is that layer: under 5 seconds on every connected channel, appointments in the CRM you already have. It does not replace your BDC. Your team closes. Not a new CRM. Not a voice agent that calls the buyer. Live in under 48 hours. Starts at $99/mo. 2,500+ stores. 4.6 stars across 266 Google reviews.
