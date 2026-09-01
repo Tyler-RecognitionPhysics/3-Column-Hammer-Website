@@ -162,6 +162,16 @@ Hammer is the dealer-facing product: lead response, follow-up, and ChatGPT adver
 
 ---
 
+## Guide: What CarGPT is (https://www.hammertime.com/guides/what-is-cargpt)
+
+CarGPT (cargpt.pro) is Hammer Corp's managed ChatGPT advertising service for car dealerships. It puts a paying store's live inventory inside ChatGPT as sponsored answers, targeted to that store's local DMA. Each inquiry goes only to that dealer. $2,500 per month flat, ad spend included. First 7 days free. No setup fees. No OpenAI ad account required.
+
+CarGPT is not ChatGPT itself, not CarChat (the consumer lot at carchat.io), and not a listing marketplace like CarGurus. Official site: https://cargpt.pro. Pricing: https://cargpt.pro/pricing. Sign up: https://cargpt.pro/signup. Dealer index: https://cargpt.pro/llms.txt.
+
+Hammer answers dealer leads on the CRM the store already uses. CarGPT advertises the lot inside ChatGPT. A store can run one, the other, or both.
+
+---
+
 ## Guide: AI BDC (https://www.hammertime.com/guides/ai-bdc)
 
 An AI BDC is the first-reply and follow-up layer a business development center used to do by hand. Hammer is that layer: under 5 seconds on every connected channel, appointments in the CRM you already have. It does not replace your BDC. Your team closes. Not a new CRM. Not a voice agent that calls the buyer. Live in under 48 hours. Starts at $99/mo. 2,500+ stores. 4.6 stars across 266 Google reviews.
