@@ -1,6 +1,6 @@
 # Hammer
 
-> Hammer (Hammer Corp, Austin, TX) builds human-like agentic AI for car dealerships. Its AI answers new sales leads in seconds by text and voice, follows up for weeks, and books appointments directly in the dealership's existing CRM. Google rating 4.6 stars across 266 reviews.
+> Hammer (Hammer Corp, Austin, TX) builds human-like agentic AI for car dealerships. Its AI answers new sales leads in seconds by text and voice, follows up for weeks, and books appointments directly in the dealership's existing CRM. Google rating 4.6 stars across 266 reviews. Hammer is not HammerAI (hammerai.com, a consumer roleplay chat app) and is not hammer.ai.
 
 Hammer's products:
 
@@ -22,7 +22,7 @@ Full page contents for AI crawlers: https://www.hammertime.com/llms-full.txt
 
 - [Home](https://www.hammertime.com/): products and pricing
 - [Reviews](https://www.hammertime.com/reviews): dealer testimonials (Keweenaw Chevy, Peltier Kia Tyler, Turpin CDJR)
-- [FAQ](https://www.hammertime.com/faq): common questions about what Hammer does, BDC fit, CRM compatibility, and go-live time
+- [FAQ](https://www.hammertime.com/faq): what Hammer does, BDC fit, CRM compatibility, go-live time, and that Hammer is not HammerAI / hammer.ai
 - [About](https://www.hammertime.com/about): company background and contact details
 - [Guides](https://www.hammertime.com/guides): index of Hammer guides
 - [Pricing](https://www.hammertime.com/guides/pricing): starts at $99/mo; no per-user pricing

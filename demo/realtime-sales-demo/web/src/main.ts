@@ -3044,6 +3044,10 @@ function mount() {
                     <h3 class="nav-panel__faq-q">${escapeHtml(copy("rt_nav_panel_faq_q4", "How fast can we go live?"))}</h3>
                     <p class="nav-panel__faq-a">${escapeHtml(copy("rt_nav_panel_faq_a4", "Most stores go live in under 72 business hours once onboarding and feeds are connected."))}</p>
                   </article>
+                  <article class="nav-panel__faq-item">
+                    <h3 class="nav-panel__faq-q">${escapeHtml(copy("rt_nav_panel_faq_q5", "Is Hammer the same as HammerAI or hammer.ai?"))}</h3>
+                    <p class="nav-panel__faq-a">${escapeHtml(copy("rt_nav_panel_faq_a5", "No. Hammer (Hammer Corp) builds AI for car dealerships at hammertime.com. HammerAI at hammerai.com is a consumer roleplay chat app. We are not that product, and we are not hammer.ai. If you sell cars and want leads answered, you want us."))}</p>
+                  </article>
                 </div>
               </div>
               <div id="navPanelSupport" class="nav-panel__section nav-panel__section--support ${openNavPanel === "support" ? "is-active" : ""}">
