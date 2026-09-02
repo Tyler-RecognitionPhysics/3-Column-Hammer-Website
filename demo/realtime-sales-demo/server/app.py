@@ -36,6 +36,7 @@ from hammer_office_session import (
     open_hammer_account_form,
     prewarm_hammer_account_form,
 )
+from hubspot_lead import enrich_website_lead
 from lead_zapier import (
     AgreementApprovalRequest,
     AgreementPendingRegisterRequest,
@@ -1799,6 +1800,57 @@ def _deliver_lead_background(zapier_payload: dict[str, str], email: str, dealers
         print(f"[realtime-sales-demo] async lead delivery failed: {exc}", flush=True)
 
 
+def _lead_enrich_base_url() -> str:
+    host = os.environ.get("VERCEL_PROJECT_PRODUCTION_URL", "").strip() or os.environ.get(
+        "VERCEL_URL", ""
+    ).strip()
+    return f"https://{host}" if host else ""
+
+
+def _spawn_lead_enrichment(zapier_payload: dict[str, str]) -> None:
+    """Kick off HubSpot enrichment without blocking the form response.
+
+    On Vercel the function freezes right after the response returns, so a
+    background thread would die before HubSpot's search index catches up.
+    Instead we invoke ourselves over HTTP (fresh lambda, up to 60s budget) and
+    deliberately don't wait for the response.
+    """
+    from lead_zapier import approval_callback_secret
+
+    base = _lead_enrich_base_url()
+    if not _is_serverless() or not base:
+        import threading
+
+        threading.Thread(target=enrich_website_lead, args=(zapier_payload,), daemon=True).start()
+        return
+    try:
+        with httpx.Client(
+            timeout=httpx.Timeout(connect=4.0, read=1.0, write=4.0, pool=4.0)
+        ) as client:
+            client.post(
+                f"{base}/api/lead/enrich",
+                json=zapier_payload,
+                headers={"X-Enrich-Secret": approval_callback_secret()},
+            )
+    except httpx.ReadTimeout:
+        pass  # request delivered; the enrichment lambda is running
+    except Exception as exc:
+        print(f"[hubspot-lead] could not spawn enrichment: {exc}", flush=True)
+
+
+@app.post("/api/lead/enrich")
+def lead_enrich(payload: dict, request: Request) -> dict:
+    """Internal: stamp the Zapier-created deal with lead + ad attribution."""
+    from lead_zapier import approval_callback_secret
+
+    secret = approval_callback_secret()
+    provided = request.headers.get("X-Enrich-Secret", "")
+    if secret and provided != secret:
+        raise HTTPException(status_code=403, detail="bad secret")
+    enrich_website_lead({k: str(v) for k, v in payload.items() if isinstance(v, (str, int, float))})
+    return {"ok": True}
+
+
 @app.post("/api/lead", response_model=LeadCaptureResponse)
 def capture_lead(
     body: LeadCaptureRequest,
@@ -1839,6 +1891,11 @@ def capture_lead(
                 prewarm_hammer_account_form(email, dealership_name=dealership)
             except Exception:
                 pass
+    if channel == "website":
+        # Zapier only creates a bare deal; stamp contact info + Google Ads
+        # attribution (gclid/UTMs) onto HubSpot. Runs detached because HubSpot's
+        # search index lags ~10-30s and the form response must stay fast.
+        _spawn_lead_enrichment(zapier_payload)
     event = str(zapier_payload.get("event", ""))
     agreement_sent = event == "agreement_email_request"
     return LeadCaptureResponse(
